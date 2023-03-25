@@ -5,8 +5,6 @@ app.use(express.json())
 const port = 3000
 app.listen(port)
 
-
-
 const orders = []
 
 const checkId = (request,response,next)=>{
@@ -31,7 +29,6 @@ app.post('/order',(request,response)=>{
     orders.push(order)
     return response.status(201).json(order)
 })
-
 
 app.put('/order/:id',checkId,(request,response)=>{
     const index = request.orderIndex
